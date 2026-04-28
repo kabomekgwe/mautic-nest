@@ -22,6 +22,7 @@ import { ReportingModule } from './modules/reporting/reporting.module';
 import { TrackingModule } from './modules/tracking/tracking.module';
 import { IntegrationsModule } from './modules/integrations/integrations.module';
 import { PluginsModule } from './modules/plugins/plugins.module';
+import { AutomationModule } from './modules/automation/automation.module';
 
 @Module({
   imports: [
@@ -46,6 +47,7 @@ import { PluginsModule } from './modules/plugins/plugins.module';
     TrackingModule,
     IntegrationsModule,
     PluginsModule,
+    AutomationModule,
   ],
 })
 export class AppModule {}
