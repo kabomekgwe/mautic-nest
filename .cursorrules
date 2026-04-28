@@ -1,0 +1,38 @@
+# Cursor Rules - Mautic-Nest
+
+Project: Mautic-Nest
+Stack: NestJS 11 + Next.js 16 + PostgreSQL + Mastra AI
+Vault: ~/tolaria-hermes/projects/mautic-nest/
+
+# Agent Behavior
+- Always read PLAN.md for architecture context before making changes
+- Follow NestJS module pattern (controller, service, entity per module)
+- Use Drizzle ORM for all database queries
+- Zod for validation at all boundaries
+- Run `npx ultracite check` before commit
+
+# Code Style
+- TypeScript strict mode
+- NestJS DI patterns (constructor injection)
+- PascalCase for classes/decorators, camelCase for methods/variables
+- `const` by default, `let` only when needed
+
+# Critical Rules
+- NEVER call `workflow.run()` directly on Mastra workflows
+- ALWAYS validate input with Zod at API boundaries
+- ALWAYS handle errors explicitly with NestJS exception filters
+- Events flow: Controller -> Service -> DB. Services never import Controllers
+
+# Commands
+dev:      pnpm dev
+build:    pnpm build
+db:       cd packages/backend && drizzle-kit push
+studio:   cd packages/backend && drizzle-kit studio
+lint:     npx ultracite check
+fix:      npx ultracite fix
+
+# SA Context
+- PayFast for payment processing
+- POPIA compliance for contact data
+- AWS Cape Town for data residency
+- ZAR currency for marketplace
